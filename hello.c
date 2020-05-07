@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* stdio: standerd io の略 */
+/* stdio: standard io の略 */
 /* 標準入出力を行うためのもの */
 /* .hはヘッダーファイル */
 
@@ -11,7 +11,7 @@ int main(void) {
     return 0;
 }
 
-- printf: 文字力を出力させるための命令
+- printf: 文字列を出力させるための命令
 - \n: 改行
 
 */
@@ -21,7 +21,7 @@ int main(void) {
 
     - データ型
         - int(整数) %d
-        - float(実数) %f
+        - float(浮動小数点数) %f
         - char(1文字) %c
 
 int main(void) {
@@ -63,7 +63,7 @@ int main(void) {
     return 0;
 }
 
-- 単行演算子
+- 単項演算子(項が一つしかない)
 ++ --
 
 int main(void) {
@@ -238,13 +238,15 @@ void sayHi(void);
 */
 
 /*
-- 三項演算子
+- 三項演算子(項が3つ)
 
 if (条件) {
     return A;
 } else {
     return B;
 }
+
+↓ if文を三項演算子に置き換える
 
 返り値 = (条件) ? A : B;
 
@@ -298,22 +300,22 @@ float getMax(float a, float b) {
 */
 
 /*
-配列: 複数のデータを一つの変数名で管理できる(0始まり)
+配列: 複数のデータを一つの変数名で管理できる
 
 int main(void) {
     // 領域の確保
-    int seles[3];
+    int sales[3];
 
     // 値の代入
-    seles[0] = 200;
-    seles[1] = 400;
-    seles[2] = 300;
+    sales[0] = 200;
+    sales[1] = 400;
+    sales[2] = 300;
 
     // 省略版
-    int seles2[] = {200, 400, 300};
+    int sales2[] = {200, 400, 300};
 
     // 値の表示
-    printf("%d\n", seles2[1]);
+    printf("%d\n", sales2[1]);
 
     return 0;
 }
@@ -352,8 +354,8 @@ int main(void) {
         int a; // 必要な領域の確保
         a = 10; // 確保した領域に値を入れている
 
-        int *pa; // 変数名はpa　*はポインタ変数の宣言に必要なだけ
-        pa = &a;
+        int *pa; // 変数名はpa　int *という型を宣言している　変数にアドレスを代入できるようになる
+        pa = &a; // 変数paに変数aのアドレスを代入
 
         printf("%d\n", *pa);
         // "%d\n"の時点ではアドレスしか取れていない
@@ -405,9 +407,8 @@ int main(void) {
 }
 
 /* gcc -o hello hello.c
-C言語はコンパイラー言語なのでソースファイル(hello.c)を
-一度実行ファイル(hello)に変換して
-出力してくださいという意味の-o(output)オプションをつけて実行する
+ソースファイル(hello.c)をコンパイルした結果を
+実行ファイル(hello)に出力してくださいという意味
 */
 
 /*
